@@ -55,20 +55,14 @@ class Entity(
         return mechanical + electrical
     }
 
-    fun draw(ratio: Double): NDArray<Double, D2> {
-        // t.goto(place)
-        shape.draw(ratio)
-        return place
-    }
-
     fun snapshot(): Entity {
         return Entity(
             shape,
             mass,
             charge,
-            place,
-            velocity,
-            acceleration,
+            place.copy(),
+            velocity.copy(),
+            acceleration.copy(),
             fixed
         )
     }

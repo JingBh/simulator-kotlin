@@ -1,5 +1,6 @@
 import io.github.jingbh.simulator.Entity
 import io.github.jingbh.simulator.World
+import io.github.jingbh.simulator.player.Player
 import io.github.jingbh.simulator.shape.Circle
 import io.github.jingbh.simulator.shape.InnerCircle
 import io.github.jingbh.simulator.util.linalg
@@ -61,19 +62,21 @@ object Demo {
     private val world = World(
         listOf(box, circle1, circle2, circle3, circle4),
         true,
-        10.0
+        60.0
     )
 
-    fun doTiming(): Double {
+    fun render(): List<World> {
         val startTime = System.currentTimeMillis() / 1000.0
-        val result = world.loop()
+        val result = world.loop(1.0 / 60.0)
         val endTime = System.currentTimeMillis() / 1000.0
 
-        return endTime - startTime
+        val timeUsage = endTime - startTime
+        println("Time: ${timeUsage}s")
+
+        return result
     }
 }
 
 fun main(args: Array<String>) {
-    val timeUsage = Demo.doTiming()
-    println("Time: ${timeUsage}s")
+    Player(Demo.render(), 1.0, 1.0 / 60.0)
 }

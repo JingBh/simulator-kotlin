@@ -1,6 +1,5 @@
 package io.github.jingbh.simulator.shape
 
-import io.github.jingbh.simulator.Color
 import io.github.jingbh.simulator.Entity
 import org.jetbrains.kotlinx.multik.api.mk
 import org.jetbrains.kotlinx.multik.api.zeros
@@ -13,8 +12,7 @@ import kotlin.math.pow
 
 class Circle(
     val radius: Double,
-    val k: Double = 10.0.pow(2),
-    val color: Color = Color.BLUE
+    val k: Double = 10.0.pow(2)
 ) : Shape() {
     override fun collapse(
         place: NDArray<Double, D2>,

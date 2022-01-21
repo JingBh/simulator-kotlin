@@ -12,8 +12,4 @@ abstract class Shape {
     ): NDArray<Double, D2>
 
     abstract fun getShape(): String
-
-    open fun draw(ratio: Double) {
-        TODO("Drawing is not implemented")
-    }
 }
