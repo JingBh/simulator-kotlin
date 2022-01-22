@@ -14,7 +14,7 @@ object Demo {
     }
 
     private val box = Entity(
-        InnerCircle(20.0),
+        InnerCircle(25.0),
         1.0,
         0.0,
         mk.zeros(2, 1),
@@ -26,7 +26,7 @@ object Demo {
     private val circle1 = Entity(
         Circle(1.0),
         2.0,
-        0.0001,
+        0.0002,
         mk.ndarray(mk[mk[0.0], mk[0.0]]),
         mk.ndarray(mk[mk[3.0], mk[4.0]]),
         mk.zeros(2, 1)
@@ -35,7 +35,7 @@ object Demo {
     private val circle2 = Entity(
         Circle(1.0),
         2.0,
-        -0.0001,
+        -0.0002,
         mk.ndarray(mk[mk[3.0], mk[5.0]]),
         mk.ndarray(mk[mk[5.0], mk[-4.0]]),
         mk.zeros(2, 1)
@@ -44,7 +44,7 @@ object Demo {
     private val circle3 = Entity(
         Circle(1.0),
         2.0,
-        -0.0001,
+        -0.0002,
         mk.ndarray(mk[mk[-3.0], mk[-4.0]]),
         mk.ndarray(mk[mk[6.0], mk[0.0]]),
         mk.zeros(2, 1)
@@ -62,7 +62,7 @@ object Demo {
     private val world = World(
         listOf(box, circle1, circle2, circle3, circle4),
         true,
-        60.0
+        30.0
     )
 
     fun render(): List<World> {

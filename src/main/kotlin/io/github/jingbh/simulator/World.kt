@@ -8,7 +8,7 @@ class World(
     val entities: List<Entity>,
     val display: Boolean = true,
     val totalTime: Double = Double.MAX_VALUE,
-    val tick: Double = 0.01
+    val tick: Double = 0.0001
 ) {
     fun step() {
         // 运动学循环
